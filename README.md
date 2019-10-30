@@ -37,7 +37,7 @@
 ### More plugins
     Shopware 5
 
-    <a href="www.webloupe.de">Show billing and shipping address on the invoices and documents</a>
+    Show billing and shipping address on the invoices and documents
     Show article image on documents and Invoice
     Show article images everywhere in Backend
     Show reviews in modal window
