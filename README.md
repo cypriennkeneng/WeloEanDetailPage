@@ -1,4 +1,4 @@
-## Additional information on the detail page
+## Additional information on the detail page (Shopware plugin)
 
 ### Current version
 
@@ -37,7 +37,7 @@
 ### More plugins
     Shopware 5
 
-    Show billing and shipping address on the invoices and documents
+    <a href="www.webloupe.de">Show billing and shipping address on the invoices and documents</a>
     Show article image on documents and Invoice
     Show article images everywhere in Backend
     Show reviews in modal window
