@@ -2,12 +2,12 @@
 
 {% block page_product_detail_ordernumber_container %}
 
-{% set eanActive = page.product.WeloEanDetailPageEANDetailActive %}
-{% set manufacturerNumberActive = page.product.WeloEanDetailPageManufacturerNumberDetailActive %}
-{% set weightActive = page.product.WeloEanDetailPageWeightDetailActive %}
-{% set lengthActive = page.product.WeloEanDetailPageLengthDetailActive %}
-{% set heightActive = page.product.WeloEanDetailPageHeightDetailActive %}
-{% set widthActive = page.product.WeloEanDetailPageWidthDetailActive %}
+    {% set eanActive = page.product.WeloEanDetailPageEANDetailActive %}
+    {% set manufacturerNumberActive = page.product.WeloEanDetailPageManufacturerNumberDetailActive %}
+    {% set weightActive = page.product.WeloEanDetailPageWeightDetailActive %}
+    {% set lengthActive = page.product.WeloEanDetailPageLengthDetailActive %}
+    {% set heightActive = page.product.WeloEanDetailPageHeightDetailActive %}
+    {% set widthActive = page.product.WeloEanDetailPageWidthDetailActive %}
 
     {% if eanActive == false
         and manufacturerNumberActive == false
@@ -16,8 +16,8 @@
         and heightActive == false
         and widthActive == false
     %}
-        {{ parent() }}xx
-    {% else %}yy
+        {{ parent() }}
+    {% else %}
         <div class="row product-detail-ordernumber-container">
             {% if page.product.productNumber %}
                 {% block page_product_detail_ordernumber_label %}
