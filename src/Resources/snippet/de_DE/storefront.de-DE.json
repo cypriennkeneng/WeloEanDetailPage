@@ -1,0 +1,12 @@
+{
+    "welo-ean-detail-page": {
+        "detail": {
+            "ean": "EAN:",
+            "manufacturerNumber": "Hersteller-Nr.:",
+            "weight": "Weight:",
+            "length": "Länge:",
+            "height": "Höhe:",
+            "width": "Breite:"
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "name": "welo/ean-detail-page",
+    "description": "Additional information on the detail page",
+    "version": "v1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Web Loupe",
+            "homepage": "https://www.webloupe.de"
+        }
+    ],
+    "require": {
+        "shopware/core": "*",
+        "shopware/storefront": "*"
+    },
+    "extra": {
+        "shopware-plugin-class": "Welo\\EanDetailPage\\WeloEanDetailPage",
+        "plugin-icon": "src/Resources/config/plugin.png",
+        "copyright": "(c) by Web Loupe",
+        "label": {
+            "de-DE": "Zusatz-Infos auf Detailseite",
+            "en-GB": "Additional information on the detail page",
+            "fr-FR": "Informations complémentaires sur la page de détail"
+        },
+        "description": {
+            "de-DE": "Das Plugin bietet eine schnelle Möglichkeit Ihren Shop um Zusatz-Infos (EAN Nummer, Herstellernummer, Gewicht, Länge, Breite und Höhe) der Artikel zu erweitern und somit für die Suchmaschinen die passenden Daten zu liefern.",
+            "en-GB": "The plugin offers a fast possibility to extend your shop by the additional information (EAN number, manufacturer number, weight, length, height, width) of the articles and thus to supply the search engines with the appropriate data.",
+            "fr-FR": "Le plugin offre une possibilité rapide d’étendre votre boutique par des informations complémentaires sur le produit tels que: (le numéro EAN, le numéro du fabricant, le poids, la longueur, la largeur, la hauteur) de l'article et ainsi de fournir des données appropriées aux moteurs de recherche."
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Welo\\EanDetailPage\\": "src/"
+        }
+    }
+}
