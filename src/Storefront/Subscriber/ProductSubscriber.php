@@ -9,14 +9,14 @@ use Welo\EanDetailPage\Service\Configuration;
 class ProductSubscriber implements EventSubscriberInterface
 {
     /**
-     * @var \Welo\EanDetailPage\Service\Configuration
+     * @var Configuration
      */
     private $configuration;
     
     /**
      * ProductSubscriber constructor.
      *
-     * @param \Welo\EanDetailPage\Service\Configuration $configuration
+     * @param Configuration $configuration
      */
     public function __construct(Configuration $configuration)
     {
@@ -31,7 +31,7 @@ class ProductSubscriber implements EventSubscriberInterface
     }
     
     /**
-     * @param \Shopware\Storefront\Page\Product\ProductPageLoadedEvent $event
+     * @param ProductPageLoadedEvent $event
      * @throws \Exception
      */
     public function onProductPageLoaded(ProductPageLoadedEvent $event): void
@@ -42,7 +42,7 @@ class ProductSubscriber implements EventSubscriberInterface
         $lengthActive = (bool)$this->configuration->getPluginConfig('WeloEanDetailPageLengthDetailActive');
         $heightActive = (bool)$this->configuration->getPluginConfig('WeloEanDetailPageHeightDetailActive');
         $widthActive = (bool)$this->configuration->getPluginConfig('WeloEanDetailPageWidthDetailActive');
-        
+
         $event->getPage()->getProduct()->assign(
             [
                 'WeloEanDetailPageEANDetailActive' => $eanActive,
