@@ -1,3 +1,6 @@
+# 1.0.3
+- Adds the default values to the configuration
+
 # 1.0.2
 - Shopware 6.1 compatibility
 
