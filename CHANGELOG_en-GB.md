@@ -1,3 +1,6 @@
+# 1.0.4
+- Compatibility to sw6.2.0 added
+
 # 1.0.3
 - Adds the default values to the configuration
 
