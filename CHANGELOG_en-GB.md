@@ -1,3 +1,6 @@
+# 1.1.0
+- Elements can now be sorted.
+
 # 1.0.4
 - Compatibility to sw6.2.0 added
 

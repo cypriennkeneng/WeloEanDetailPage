@@ -38,4 +38,26 @@ class Configuration
     {
         return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key);
     }
+
+    /**
+     * @param $key
+     * @return bool|mixed
+     * @throws \Exception
+     */
+    public function getActive($key)
+    {
+        $key = 'WeloEanDetailPage' . $key . 'DetailActive';
+        return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key);
+    }
+
+    /**
+     * @param $key
+     * @return int
+     * @throws \Exception
+     */
+    public function getPosition($key)
+    {
+        $key = 'WeloEanDetailPage' . $key . 'DetailPosition';
+        return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key);
+    }
 }

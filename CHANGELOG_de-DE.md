@@ -1,3 +1,6 @@
+# 1.1.0
+- Elemente können nun nach Reihenfolge sortiert werden.
+
 # 1.0.4
 - Kompatibilität zu SW6.2.0 hinzugefügt.
 

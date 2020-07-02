@@ -2,33 +2,20 @@
 
 {% block page_product_detail_ordernumber_container %}
 
-    {% set eanActive = page.product.WeloEanDetailPageEANDetailActive %}
-    {% set manufacturerNumberActive = page.product.WeloEanDetailPageManufacturerNumberDetailActive %}
-    {% set weightActive = page.product.WeloEanDetailPageWeightDetailActive %}
-    {% set lengthActive = page.product.WeloEanDetailPageLengthDetailActive %}
-    {% set heightActive = page.product.WeloEanDetailPageHeightDetailActive %}
-    {% set widthActive = page.product.WeloEanDetailPageWidthDetailActive %}
-
-    {% if eanActive == false
-        and manufacturerNumberActive == false
-        and weighActive == false
-        and lengthActive == false
-        and heightActive == false
-        and widthActive == false
-    %}
+    {% if page.product.WeloEanDetailData | length <= 0 %}
         {{ parent() }}
     {% else %}
         <div class="row product-detail-ordernumber-container">
             {% if page.product.productNumber %}
                 {% block page_product_detail_ordernumber_label %}
-                    <div class="col-3">
+                    <div class="col-4">
                         <span class="product-detail-ordernumber-label">
                             {{ "detail.ordernumberLabel"|trans }}
                         </span>
                     </div>
                 {% endblock %}
                 {% block page_product_detail_ordernumber %}
-                    <div class="col-9">
+                    <div class="col-8">
                         <meta itemprop="productID" content="{{ page.product.id }}"/>
                         <span class="product-detail-ordernumber" itemprop="sku">
                             {{ page.product.productNumber }}
@@ -37,113 +24,20 @@
                 {% endblock %}
             {% endif %}
 
-            {% if page.product.ean and eanActive == true %}
-                {% block welo_ean_detail_page_page_product_detail_ean_label %}
-                    <div class="col-3">
-                        <span class="product-detail-ordernumber-label">
-                            {{ "welo-ean-detail-page.detail.ean"|trans }}
-                        </span>
-                    </div>
-                {% endblock %}
-                {% block welo_ean_detail_page_page_product_detail_ean %}
-                    <div class="col-9">
-                        <meta itemprop="ean" content="{{ page.product.ean }}"/>
-                        <span class="product-detail-ean" itemprop="ean">
-                            {{ page.product.ean }}
-                        </span>
-                    </div>
-                {% endblock %}
-            {% endif %}
 
-            {% if page.product.manufacturerNumber and manufacturerNumberActive == true %}
-                {% block welo_ean_detail_page_page_product_detail_manufacturer_number_label %}
-                    <div class="col-3">
-                        <span class="product-detail-ordernumber-label">
-                            {{ "welo-ean-detail-page.detail.manufacturerNumber"|trans }}
-                        </span>
-                    </div>
-                {% endblock %}
-                {% block welo_ean_detail_page_page_product_detail_manufacturer_number %}
-                    <div class="col-9">
-                        <meta itemprop="manufacturer number" content="{{ page.product.manufacturerNumber }}"/>
-                        <span class="product-detail-manufacturer-number" itemprop="manufacturer number">
-                            {{ page.product.manufacturerNumber }}
-                        </span>
-                    </div>
-                {% endblock %}
-            {% endif %}
-
-            {% if page.product.weight and weightActive == true %}
-                {% block welo_ean_detail_page_page_product_detail_weight_label %}
-                    <div class="col-3">
-                        <span class="product-detail-ordernumber-label">
-                            {{ "welo-ean-detail-page.detail.weight"|trans }}
-                        </span>
-                    </div>
-                {% endblock %}
-                {% block welo_ean_detail_page_page_product_detail_weight %}
-                    <div class="col-9">
-                        <meta itemprop="weight" content="{{ page.product.weight }} kg"/>
-                        <span class="product-detail-weight" itemprop="weight">
-                            {{ page.product.weight }} kg
-                        </span>
-                    </div>
-                {% endblock %}
-            {% endif %}
-
-            {% if page.product.length and lengthActive == true %}
-                {% block welo_ean_detail_page_page_product_detail_length_label %}
-                    <div class="col-3">
-                        <span class="product-detail-ordernumber-label">
-                            {{ "welo-ean-detail-page.detail.length"|trans }}
-                        </span>
-                    </div>
-                {% endblock %}
-                {% block welo_ean_detail_page_page_product_detail_length %}
-                    <div class="col-9">
-                        <meta itemprop="length" content="{{ page.product.length }} mm"/>
-                        <span class="product-detail-length" itemprop="length">
-                            {{ page.product.length }} mm
-                        </span>
-                    </div>
-                {% endblock %}
-            {% endif %}
-
-            {% if page.product.height and heightActive == true %}
-                {% block welo_ean_detail_page_page_product_detail_height_label %}
-                    <div class="col-3">
-                        <span class="product-detail-ordernumber-label">
-                            {{ "welo-ean-detail-page.detail.height"|trans }}
-                        </span>
-                    </div>
-                {% endblock %}
-                {% block welo_ean_detail_page_page_product_detail_height %}
-                    <div class="col-9">
-                        <meta itemprop="height" content="{{ page.product.height }} mm"/>
-                        <span class="product-detail-height" itemprop="height">
-                            {{ page.product.height }} mm
-                        </span>
-                    </div>
-                {% endblock %}
-            {% endif %}
-
-            {% if page.product.width and widthActive == true %}
-                {% block welo_ean_detail_page_page_product_detail_width_label %}
-                    <div class="col-3">
-                        <span class="product-detail-ordernumber-label">
-                            {{ "welo-ean-detail-page.detail.width"|trans }}
-                        </span>
-                    </div>
-                {% endblock %}
-                {% block welo_ean_detail_page_page_product_detail_width %}
-                    <div class="col-9">
-                        <meta itemprop="width" content="{{ page.product.width }} mm"/>
-                        <span class="product-detail-width" itemprop="width">
-                            {{ page.product.width }} mm
-                        </span>
-                    </div>
-                {% endblock %}
-            {% endif %}
+            {% for item in page.product.WeloEanDetailData %}
+                <div class="col-4">
+                    <span class="product-detail-ordernumber-label">
+                        {{ item.label }}:
+                    </span>
+                </div>
+                <div class="col-8">
+                    <meta itemprop="{{ item.content }}" content="{{ item.content }}"/>
+                    <span class="product-detail-ean" itemprop="{{ item.content }}">
+                    {{ item.content }}
+                </span>
+                </div>
+            {% endfor %}
         </div>
     {% endif %}
 {% endblock %}

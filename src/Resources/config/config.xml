@@ -15,12 +15,28 @@
             <defaultValue>true</defaultValue>
         </input-field>
 
+        <input-field type="int">
+            <name>WeloEanDetailPageEANDetailPosition</name>
+            <label lang="de-DE">Position</label>
+            <label>Position</label>
+            <label lang="fr-FR">Position</label>
+            <defaultValue>1</defaultValue>
+        </input-field>
+
         <input-field type="bool">
             <name>WeloEanDetailPageManufacturerNumberDetailActive</name>
             <label lang="de-DE">Zeige Hersteller-Nr. auf Detailseite</label>
             <label>Display the supplier number Ean on the detail page</label>
             <label lang="fr-FR">Afficher le No du fabricant sur la page de detail</label>
             <defaultValue>true</defaultValue>
+        </input-field>
+
+        <input-field type="int">
+            <name>WeloEanDetailPageManufacturerNumberDetailPosition</name>
+            <label lang="de-DE">Position</label>
+            <label>Position</label>
+            <label lang="fr-FR">Position</label>
+            <defaultValue>2</defaultValue>
         </input-field>
 
         <input-field type="bool">
@@ -30,11 +46,27 @@
             <label lang="fr-FR">Afficher le poids sur la page de detail</label>
         </input-field>
 
+        <input-field type="int">
+            <name>WeloEanDetailPageWeightDetailPosition</name>
+            <label lang="de-DE">Position</label>
+            <label>Position</label>
+            <label lang="fr-FR">Position</label>
+            <defaultValue>3</defaultValue>
+        </input-field>
+
         <input-field type="bool">
             <name>WeloEanDetailPageLengthDetailActive</name>
             <label lang="de-DE">Zeige Länge auf Detailseite</label>
             <label>Display the length on the detail page</label>
             <label lang="fr-FR">Afficher la longueur sur la page de detail</label>
+        </input-field>
+
+        <input-field type="int">
+            <name>WWeloEanDetailPageLengthDetailPosition</name>
+            <label lang="de-DE">Position</label>
+            <label>Position</label>
+            <label lang="fr-FR">Position</label>
+            <defaultValue>4</defaultValue>
         </input-field>
 
         <input-field type="bool">
@@ -44,11 +76,27 @@
             <label lang="fr-FR">Afficher la hauteur sur la page de detail</label>
         </input-field>
 
+        <input-field type="int">
+            <name>WeloEanDetailPageHeightDetailPosition</name>
+            <label lang="de-DE">Position</label>
+            <label>Position</label>
+            <label lang="fr-FR">Position</label>
+            <defaultValue>5</defaultValue>
+        </input-field>
+
         <input-field type="bool">
             <name>WeloEanDetailPageWidthDetailActive</name>
             <label lang="de-DE">Zeige Breite auf Detailseite</label>
             <label>Display the width on the detail page</label>
             <label lang="fr-FR">Afficher la largeur sur la page de detail</label>
+        </input-field>
+
+        <input-field type="int">
+            <name>WeloEanDetailPageWidthDetailPosition</name>
+            <label lang="de-DE">Position</label>
+            <label>Position</label>
+            <label lang="fr-FR">Position</label>
+            <defaultValue>6</defaultValue>
         </input-field>
     </card>
 </config>
