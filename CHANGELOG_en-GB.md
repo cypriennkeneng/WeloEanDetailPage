@@ -1,5 +1,5 @@
 # 1.1.0
-- Elements can now be sorted.
+- The sorting can now be changed in the backend.
 
 # 1.0.4
 - Compatibility to sw6.2.0 added
