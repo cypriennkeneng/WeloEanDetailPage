@@ -30,6 +30,10 @@
         "manufacturerLink": {
             "de-DE": "https://www.webloupe.de",
             "en-GB": "https://www.webloupe.de"
+        },
+        "supportLink": {
+            "de-DE": "https://www.webloupe.de",
+            "en-GB": "https://www.webloupe.de"
         }
     },
     "autoload": {
