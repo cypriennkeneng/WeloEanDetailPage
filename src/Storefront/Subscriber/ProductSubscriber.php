@@ -44,61 +44,69 @@ class ProductSubscriber implements EventSubscriberInterface
         $heightActive = (bool)$this->configuration->getActive('Height');
         $widthActive = (bool)$this->configuration->getActive('Width');
 
+        $eanPosition = (int)$this->configuration->getPosition('EAN');
+        $manufacturerPosition = (int)$this->configuration->getPosition('ManufacturerNumber');
+        $weightPosition = (int)$this->configuration->getPosition('Weight');
+        $lengthPosition = (int)$this->configuration->getLengthPosition('WWeloEanDetailPageLengthDetailPosition');
+        $heightPosition = (int)$this->configuration->getPosition('Height');
+        $widthPosition = (int)$this->configuration->getPosition('Width');
+
 
         /** @var SalesChannelProductEntity $product */
         $product = $event->getPage()->getProduct();
 
         $data = [];
 
-        if ($eanActive) {
+        if ($eanActive && $product->getEan()) {
             $data[] = [
                 'label' => 'EAN',
-                'position' => (int)$this->configuration->getPosition('EAN'),
+                'position' => $eanPosition,
                 'content' => $product->getEan(),
                 'itemprop' => 'ean',
             ];
         }
 
-        if ($manufacturerActive) {
+        if ($manufacturerActive && $product->getManufacturerNumber()) {
             $data[] = [
                 'label' => 'Manufacturer Nr',
-                'position' => (int)$this->configuration->getPosition('ManufacturerNumber'),
+                'position' => $manufacturerPosition,
                 'content' => $product->getManufacturerNumber(),
                 'itemprop' => 'manufacturer number',
             ];
         }
 
-        if ($weightActive) {
+        if ($weightActive && $product->getWeight()) {
             $data[] = [
                 'label' => 'Weight',
-                'position' => (int)$this->configuration->getPosition('Weight'),
+                'position' => $weightPosition,
                 'content' => $product->getWeight() . ' kg',
                 'itemprop' => 'weight',
             ];
         }
 
-        if ($lengthActive) {
+
+        if ($lengthActive && $product->getLength()) {
             $data[] = [
                 'label' => 'Length',
-                'position' => (int)$this->configuration->getPosition('Length'),
+                'position' => $lengthPosition,
                 'content' => $product->getLength() . ' mm',
                 'itemprop' => 'length',
             ];
         }
 
-        if ($heightActive) {
+        if ($heightActive && $product->getHeight()) {
             $data[] = [
                 'label' => 'Height',
-                'position' => (int)$this->configuration->getPosition('Height'),
+                'position' => $heightPosition,
                 'content' => $product->getHeight() . ' mm',
                 'itemprop' => 'height',
             ];
         }
 
-        if ($widthActive) {
+        if ($widthActive && $product->getWidth()) {
             $data[] = [
                 'label' => 'Width',
-                'position' => (int)$this->configuration->getPosition('Width'),
+                'position' => $widthPosition,
                 'content' => $product->getWidth() . ' mm',
                 'itemprop' => 'width',
             ];

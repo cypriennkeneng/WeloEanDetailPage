@@ -58,6 +58,17 @@ class Configuration
     public function getPosition($key)
     {
         $key = 'WeloEanDetailPage' . $key . 'DetailPosition';
+        //die('hh '.$key);
+        return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key);
+    }
+
+    /**
+     * @param $key
+     * @return int
+     * @throws \Exception
+     */
+    public function getLengthPosition($key)
+    {
         return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key);
     }
 }
