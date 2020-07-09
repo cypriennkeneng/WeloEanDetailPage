@@ -11,8 +11,7 @@
         }
     ],
     "require": {
-        "shopware/core": "*",
-        "shopware/storefront": "*"
+        "shopware/core": "*"
     },
     "extra": {
         "shopware-plugin-class": "Welo\\EanDetailPage\\WeloEanDetailPage",
@@ -27,6 +26,10 @@
             "de-DE": "Das Plugin bietet eine schnelle Möglichkeit Ihren Shop um Zusatz-Infos (EAN Nummer, Herstellernummer, Gewicht, Länge, Breite und Höhe) der Artikel zu erweitern und somit für die Suchmaschinen die passenden Daten zu liefern.",
             "en-GB": "The plugin offers a fast possibility to extend your shop by the additional information (EAN number, manufacturer number, weight, length, height, width) of the articles and thus to supply the search engines with the appropriate data.",
             "fr-FR": "Le plugin offre une possibilité rapide d’étendre votre boutique par des informations complémentaires sur le produit tels que: (le numéro EAN, le numéro du fabricant, le poids, la longueur, la largeur, la hauteur) de l'article et ainsi de fournir des données appropriées aux moteurs de recherche."
+        },
+        "manufacturerLink": {
+            "de-DE": "https://www.webloupe.de",
+            "en-GB": "https://www.webloupe.de"
         }
     },
     "autoload": {
