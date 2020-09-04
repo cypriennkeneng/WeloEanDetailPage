@@ -59,7 +59,7 @@ class ProductSubscriber implements EventSubscriberInterface
 
         if ($eanActive && $product->getEan()) {
             $data[] = [
-                'label' => 'EAN',
+                'label' => $this->configuration->translate('welo-ean-detail-page.detail.ean'),
                 'position' => $eanPosition,
                 'content' => $product->getEan(),
                 'itemprop' => 'ean',
@@ -68,7 +68,7 @@ class ProductSubscriber implements EventSubscriberInterface
 
         if ($manufacturerActive && $product->getManufacturerNumber()) {
             $data[] = [
-                'label' => 'Manufacturer Nr',
+                'label' => $this->configuration->translate('welo-ean-detail-page.detail.manufacturerNumber'),
                 'position' => $manufacturerPosition,
                 'content' => $product->getManufacturerNumber(),
                 'itemprop' => 'manufacturer number',
@@ -77,7 +77,7 @@ class ProductSubscriber implements EventSubscriberInterface
 
         if ($weightActive && $product->getWeight()) {
             $data[] = [
-                'label' => 'Weight',
+                'label' => $this->configuration->translate('welo-ean-detail-page.detail.weight'),
                 'position' => $weightPosition,
                 'content' => $product->getWeight() . ' kg',
                 'itemprop' => 'weight',
@@ -87,7 +87,7 @@ class ProductSubscriber implements EventSubscriberInterface
 
         if ($lengthActive && $product->getLength()) {
             $data[] = [
-                'label' => 'Length',
+                'label' => $this->configuration->translate('welo-ean-detail-page.detail.length'),
                 'position' => $lengthPosition,
                 'content' => $product->getLength() . ' mm',
                 'itemprop' => 'length',
@@ -96,7 +96,7 @@ class ProductSubscriber implements EventSubscriberInterface
 
         if ($heightActive && $product->getHeight()) {
             $data[] = [
-                'label' => 'Height',
+                'label' => $this->configuration->translate('welo-ean-detail-page.detail.height'),
                 'position' => $heightPosition,
                 'content' => $product->getHeight() . ' mm',
                 'itemprop' => 'height',
@@ -105,7 +105,7 @@ class ProductSubscriber implements EventSubscriberInterface
 
         if ($widthActive && $product->getWidth()) {
             $data[] = [
-                'label' => 'Width',
+                'label' => $this->configuration->translate('welo-ean-detail-page.detail.width'),
                 'position' => $widthPosition,
                 'content' => $product->getWidth() . ' mm',
                 'itemprop' => 'width',

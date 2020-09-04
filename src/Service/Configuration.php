@@ -2,6 +2,7 @@
 namespace Welo\EanDetailPage\Service;
 
 use Shopware\Core\System\SystemConfig\SystemConfigService;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class Config
@@ -19,14 +20,20 @@ class Configuration
     private $systemConfigService;
     
     public const WELO_CONFIG_DOMAIN = 'WeloEanDetailPage.config.';
-    
+    /**
+     * @var TranslatorInterface
+     */
+    private $translator;
+
     /**
      * Configuration constructor.
      *
      * @param \Shopware\Core\System\SystemConfig\SystemConfigService $systemConfigService
+     * @param TranslatorInterface $translator
      */
-    public function __construct(SystemConfigService $systemConfigService) {
+    public function __construct(SystemConfigService $systemConfigService, TranslatorInterface $translator) {
         $this->systemConfigService = $systemConfigService;
+        $this->translator = $translator;
     }
     
     /**
@@ -70,5 +77,9 @@ class Configuration
     public function getLengthPosition($key)
     {
         return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key);
+    }
+
+    public function translate($name) {
+        return $this->translator->trans($name);
     }
 }
