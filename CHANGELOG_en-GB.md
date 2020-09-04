@@ -1,3 +1,6 @@
+# 1.1.1
+- Element translation fixed
+
 # 1.1.0
 - The sorting can now be changed in the backend.
 
