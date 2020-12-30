@@ -5,12 +5,12 @@
     {% if page.product.WeloEanDetailData | length <= 0 %}
         {{ parent() }}
     {% else %}
-        <div class="row product-detail-ordernumber-container">
+        <div class="row product-detail-ordernumber-container test">
             {% if page.product.productNumber %}
                 {% block page_product_detail_ordernumber_label %}
                     <div class="col-4">
                         <span class="product-detail-ordernumber-label">
-                            {{ "detail.ordernumberLabel"|trans }}
+                            {{ "detail.ordernumberLabel"|trans|sw_sanitize }}
                         </span>
                     </div>
                 {% endblock %}
@@ -31,8 +31,7 @@
                     </span>
                 </div>
                 <div class="col-8">
-                    <meta itemprop="{{ item.content }}" content="{{ item.content }}"/>
-                    <span class="product-detail-ean" itemprop="{{ item.content }}">
+                    <span class="product-detail-ean">
                         {{ item.content }}
                     </span>
                 </div>

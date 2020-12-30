@@ -1,3 +1,6 @@
+# 1.1.2
+- Rich Snippet Test
+
 # 1.1.1
 - Elementen Übersetzung gefixt
 
