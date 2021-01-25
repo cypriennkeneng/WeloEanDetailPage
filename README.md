@@ -2,12 +2,12 @@
 
 ### Current version
 
-    1.0.0
+    1.1.2
 
 ### Compatibility with Shopware
 
     minimal Shopware version 6.0
-    maximal Shopware version 6.1.2
+    maximal Shopware version 6.3.5.0
 
 ### Description
 
