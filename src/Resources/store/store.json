@@ -1,0 +1,32 @@
+{
+    "storeAvailabilities": [
+        "German",
+        "International"
+    ],
+    "localizations": [
+        "de_DE",
+        "en_GB",
+        "fr_FR"
+    ],
+    "categories": [
+        "Detailseite"
+    ],
+    "productType": "extension",
+    "responsive": null,
+    "standardLocale": "de_DE",
+    "tags": {
+        "de": [
+            "herstellernummer",
+            "Detailseite",
+            "Artikel EAN",
+            "Produktseite"
+        ],
+        "en": [
+            "manufacturer",
+            "product page",
+            "Detail page",
+            "product EAN"
+        ]
+    },
+    "videos": []
+}
