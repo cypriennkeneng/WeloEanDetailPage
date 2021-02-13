@@ -26,7 +26,7 @@
         <input-field type="bool">
             <name>WeloEanDetailPageManufacturerNumberDetailActive</name>
             <label lang="de-DE">Zeige Hersteller-Nr. auf Detailseite</label>
-            <label>Display the supplier number Ean on the detail page</label>
+            <label>Display the supplier number on the detail page</label>
             <label lang="fr-FR">Afficher le No du fabricant sur la page de detail</label>
             <defaultValue>true</defaultValue>
         </input-field>
@@ -37,6 +37,22 @@
             <label>Position</label>
             <label lang="fr-FR">Position</label>
             <defaultValue>2</defaultValue>
+        </input-field>
+
+        <input-field type="bool">
+            <name>WeloEanDetailPageManufacturerNameDetailActive</name>
+            <label lang="de-DE">Zeige Herstellername auf Detailseite</label>
+            <label>Display the supplier name on the detail page</label>
+            <label lang="fr-FR">Afficher le Nom du fabricant sur la page de detail</label>
+            <defaultValue>true</defaultValue>
+        </input-field>
+
+        <input-field type="int">
+            <name>WeloEanDetailPageManufacturerNameDetailPosition</name>
+            <label lang="de-DE">Position</label>
+            <label>Position</label>
+            <label lang="fr-FR">Position</label>
+            <defaultValue>3</defaultValue>
         </input-field>
 
         <input-field type="bool">
@@ -51,7 +67,7 @@
             <label lang="de-DE">Position</label>
             <label>Position</label>
             <label lang="fr-FR">Position</label>
-            <defaultValue>3</defaultValue>
+            <defaultValue>4</defaultValue>
         </input-field>
 
         <input-field type="bool">
@@ -66,7 +82,7 @@
             <label lang="de-DE">Position</label>
             <label>Position</label>
             <label lang="fr-FR">Position</label>
-            <defaultValue>4</defaultValue>
+            <defaultValue>5</defaultValue>
         </input-field>
 
         <input-field type="bool">
@@ -81,7 +97,7 @@
             <label lang="de-DE">Position</label>
             <label>Position</label>
             <label lang="fr-FR">Position</label>
-            <defaultValue>5</defaultValue>
+            <defaultValue>6</defaultValue>
         </input-field>
 
         <input-field type="bool">
@@ -96,7 +112,7 @@
             <label lang="de-DE">Position</label>
             <label>Position</label>
             <label lang="fr-FR">Position</label>
-            <defaultValue>6</defaultValue>
+            <defaultValue>7</defaultValue>
         </input-field>
     </card>
 </config>

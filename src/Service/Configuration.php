@@ -5,17 +5,18 @@ use Shopware\Core\System\SystemConfig\SystemConfigService;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * Class Config
+ * Class Configuration
  *
- * @author Steven Thorne <shopware@webloupe.de>
- * @copyright Copyright (c) 2017-2019 Web Loupe
- * @package EanDetailPage\Services
+ * @author    Cyprien Nkeneng <cyprien.nkeneng@webloupe.de> - www.webloupe.de
+ * @copyright Copyright (c) 2017-2020 WEB LOUPE
+ * @package   Welo\EanDetailPage\Service
+ * @link      https://www.webloupe.de
  * @version   1
  */
 class Configuration
 {
     /**
-     * @var \Shopware\Core\System\SystemConfig\SystemConfigService
+     * @var SystemConfigService
      */
     private $systemConfigService;
     
@@ -28,12 +29,17 @@ class Configuration
     /**
      * Configuration constructor.
      *
-     * @param \Shopware\Core\System\SystemConfig\SystemConfigService $systemConfigService
+     * @param SystemConfigService $systemConfigService
      * @param TranslatorInterface $translator
      */
     public function __construct(SystemConfigService $systemConfigService, TranslatorInterface $translator) {
         $this->systemConfigService = $systemConfigService;
         $this->translator = $translator;
+    }
+
+    public function get($saleChannelId)
+    {
+        return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN, $saleChannelId);
     }
     
     /**
@@ -48,25 +54,24 @@ class Configuration
 
     /**
      * @param $key
+     * @param $saleChannelId
      * @return bool|mixed
-     * @throws \Exception
      */
-    public function getActive($key)
+    public function getActive($key, $saleChannelId = null)
     {
         $key = 'WeloEanDetailPage' . $key . 'DetailActive';
-        return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key);
+        return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key, $saleChannelId);
     }
 
     /**
      * @param $key
+     * @param $saleChannelId
      * @return int
-     * @throws \Exception
      */
-    public function getPosition($key)
+    public function getPosition($key, $saleChannelId = null)
     {
         $key = 'WeloEanDetailPage' . $key . 'DetailPosition';
-        //die('hh '.$key);
-        return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key);
+        return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key, $saleChannelId);
     }
 
     /**

@@ -1,3 +1,6 @@
+# 1.1.3
+- Manufacturer name added
+
 # 1.1.2
 - Rich Snippet Test
 

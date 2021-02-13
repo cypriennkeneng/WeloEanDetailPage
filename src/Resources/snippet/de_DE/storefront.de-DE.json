@@ -3,6 +3,7 @@
         "detail": {
             "ean": "EAN:",
             "manufacturerNumber": "Hersteller-Nr.:",
+            "manufacturerName": "Hersteller:",
             "weight": "Gewicht:",
             "length": "Länge:",
             "height": "Höhe:",

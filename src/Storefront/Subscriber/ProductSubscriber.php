@@ -37,20 +37,23 @@ class ProductSubscriber implements EventSubscriberInterface
      */
     public function onProductPageLoaded(ProductPageLoadedEvent $event): void
     {
-        $eanActive = (bool)$this->configuration->getActive('EAN');
-        $manufacturerActive = (bool)$this->configuration->getActive('ManufacturerNumber');
-        $weightActive = (bool)$this->configuration->getActive('Weight');
-        $lengthActive = (bool)$this->configuration->getActive('Length');
-        $heightActive = (bool)$this->configuration->getActive('Height');
-        $widthActive = (bool)$this->configuration->getActive('Width');
+        $saleChannelId = $event->getSalesChannelContext()->getSalesChannel()->getId();
 
-        $eanPosition = (int)$this->configuration->getPosition('EAN');
-        $manufacturerPosition = (int)$this->configuration->getPosition('ManufacturerNumber');
-        $weightPosition = (int)$this->configuration->getPosition('Weight');
-        $lengthPosition = (int)$this->configuration->getLengthPosition('WWeloEanDetailPageLengthDetailPosition');
-        $heightPosition = (int)$this->configuration->getPosition('Height');
-        $widthPosition = (int)$this->configuration->getPosition('Width');
+        $eanActive = (bool)$this->configuration->getActive('EAN', $saleChannelId);
+        $manufacturerActive = (bool)$this->configuration->getActive('ManufacturerNumber',$saleChannelId);
+        $manufacturerNameActive = (bool)$this->configuration->getActive('ManufacturerName', $saleChannelId);
+        $weightActive = (bool)$this->configuration->getActive('Weight', $saleChannelId);
+        $lengthActive = (bool)$this->configuration->getActive('Length', $saleChannelId);
+        $heightActive = (bool)$this->configuration->getActive('Height', $saleChannelId);
+        $widthActive = (bool)$this->configuration->getActive('Width', $saleChannelId);
 
+        $eanPosition = (int)$this->configuration->getPosition('EAN', $saleChannelId);
+        $manufacturerPosition = (int)$this->configuration->getPosition('ManufacturerNumber', $saleChannelId);
+        $manufacturerNamePosition = (int)$this->configuration->getPosition('ManufacturerName', $saleChannelId);
+        $weightPosition = (int)$this->configuration->getPosition('Weight', $saleChannelId);
+        $lengthPosition = (int)$this->configuration->getPosition('Length', $saleChannelId);
+        $heightPosition = (int)$this->configuration->getPosition('Height', $saleChannelId);
+        $widthPosition = (int)$this->configuration->getPosition('Width', $saleChannelId);
 
         /** @var SalesChannelProductEntity $product */
         $product = $event->getPage()->getProduct();
@@ -72,6 +75,15 @@ class ProductSubscriber implements EventSubscriberInterface
                 'position' => $manufacturerPosition,
                 'content' => $product->getManufacturerNumber(),
                 'itemprop' => 'manufacturer number',
+            ];
+        }
+
+        if ($manufacturerNameActive && $product->getManufacturer()->getName()) {
+            $data[] = [
+                'label' => $this->configuration->translate('welo-ean-detail-page.detail.manufacturerName'),
+                'position' => $manufacturerNamePosition,
+                'content' => $product->getManufacturer()->getName(),
+                'itemprop' => 'manufacturer',
             ];
         }
 
