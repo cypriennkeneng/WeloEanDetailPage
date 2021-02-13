@@ -1,5 +1,5 @@
 # 1.1.3
-- Herstellername wird hinzugefügt
+Herstellername wird hinzugefügt
 
 # 1.1.2
 - Rich Snippet Test
