@@ -1,3 +1,6 @@
+# 1.1.4
+- BugFix: Elements can now be sorted correctly
+
 # 1.1.3
 - Manufacturer name added
 

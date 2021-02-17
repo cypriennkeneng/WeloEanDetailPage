@@ -41,15 +41,15 @@ class Configuration
     {
         return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN, $saleChannelId);
     }
-    
+
     /**
-     * @param $key
+     * @param      $key
+     * @param null $saleChannelId
      * @return bool|mixed
-     * @throws \Exception
      */
-    public function getPluginConfig($key)
+    public function getPluginConfig($key, $saleChannelId = null)
     {
-        return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key);
+        return $this->systemConfigService->get(self::WELO_CONFIG_DOMAIN . $key, $saleChannelId);
     }
 
     /**

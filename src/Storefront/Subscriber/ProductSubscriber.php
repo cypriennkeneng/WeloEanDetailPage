@@ -51,7 +51,8 @@ class ProductSubscriber implements EventSubscriberInterface
         $manufacturerPosition = (int)$this->configuration->getPosition('ManufacturerNumber', $saleChannelId);
         $manufacturerNamePosition = (int)$this->configuration->getPosition('ManufacturerName', $saleChannelId);
         $weightPosition = (int)$this->configuration->getPosition('Weight', $saleChannelId);
-        $lengthPosition = (int)$this->configuration->getPosition('Length', $saleChannelId);
+        $lengthPosition = (int)$this->configuration->getPluginConfig('WWeloEanDetailPageLengthDetailPosition', $saleChannelId);
+
         $heightPosition = (int)$this->configuration->getPosition('Height', $saleChannelId);
         $widthPosition = (int)$this->configuration->getPosition('Width', $saleChannelId);
 
