@@ -79,7 +79,7 @@ class ProductSubscriber implements EventSubscriberInterface
             ];
         }
 
-        if ($manufacturerNameActive && $product->getManufacturer()->getName()) {
+        if ($manufacturerNameActive && $product->getManufacturer() && $product->getManufacturer()->getName()) {
             $data[] = [
                 'label' => $this->configuration->translate('welo-ean-detail-page.detail.manufacturerName'),
                 'position' => $manufacturerNamePosition,

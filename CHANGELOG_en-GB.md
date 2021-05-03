@@ -1,3 +1,6 @@
+# 1.1.5
+- BugFix: Error when manufacturer is not filled in
+
 # 1.1.4
 - BugFix: Elements can now be sorted correctly
 
