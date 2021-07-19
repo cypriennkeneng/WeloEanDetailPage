@@ -5,40 +5,38 @@
     {% if page.product.WeloEanDetailData | length <= 0 %}
         {{ parent() }}
     {% else %}
-        {% block welo_ean_detail_page_container %}
-            <div class="row product-detail-ordernumber-container test">
-                {% if page.product.productNumber %}
-                    {% block page_product_detail_ordernumber_label %}
-                        <div class="col-4">
-                            <span class="product-detail-ordernumber-label">
-                                {{ "detail.ordernumberLabel"|trans|sw_sanitize }}
-                            </span>
-                        </div>
-                    {% endblock %}
-                    {% block page_product_detail_ordernumber %}
-                        <div class="col-8">
-                            <meta itemprop="productID" content="{{ page.product.id }}"/>
-                            <span class="product-detail-ordernumber" itemprop="sku">
-                                {{ page.product.productNumber }}
-                            </span>
-                        </div>
-                    {% endblock %}
-                {% endif %}
-
-                {% for item in page.product.WeloEanDetailData %}
+        <div class="row product-detail-ordernumber-container test">
+            {% if page.product.productNumber %}
+                {% block page_product_detail_ordernumber_label %}
                     <div class="col-4">
                         <span class="product-detail-ordernumber-label">
-                            {{ item.label }}
+                            {{ "detail.ordernumberLabel"|trans|sw_sanitize }}
                         </span>
                     </div>
+                {% endblock %}
+                {% block page_product_detail_ordernumber %}
                     <div class="col-8">
-                        <span class="product-detail-ean">
-                            {{ item.content }}
+                        <meta itemprop="productID" content="{{ page.product.id }}"/>
+                        <span class="product-detail-ordernumber" itemprop="sku">
+                            {{ page.product.productNumber }}
                         </span>
                     </div>
-                {% endfor %}
-            </div>
-        {% endblock %}
+                {% endblock %}
+            {% endif %}
+
+            {% for item in page.product.WeloEanDetailData %}
+                <div class="col-4">
+                    <span class="product-detail-ordernumber-label">
+                        {{ item.label }}
+                    </span>
+                </div>
+                <div class="col-8">
+                    <span class="product-detail-ean">
+                        {{ item.content }}
+                    </span>
+                </div>
+            {% endfor %}
+        </div>
     {% endif %}
 {% endblock %}
 
