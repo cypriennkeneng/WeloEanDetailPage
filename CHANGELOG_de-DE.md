@@ -1,3 +1,6 @@
+# 1.1.6
+- BugFix: Anzeige bei individuelles Produktseiten-Layout 
+
 # 1.1.5
 - BugFix: Fehler, wenn Hersteller nicht ausgefüllt ist 
 

@@ -1,5 +1,8 @@
+# 1.1.6
+- BugFix: Display with individual product page layout
+
 # 1.1.5
-- BugFix: Error when manufacturer is not filled in
+- BugFix: Error when manufacturer is empty
 
 # 1.1.4
 - BugFix: Elements can now be sorted correctly
