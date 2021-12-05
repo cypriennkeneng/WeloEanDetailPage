@@ -59,8 +59,6 @@ class ProductSubscriber implements EventSubscriberInterface
         /** @var SalesChannelProductEntity $product */
         $product = $event->getPage()->getProduct();
 
-
-//        $this->dumb($product);
         $data = [];
 
         if ($eanActive && $product->getEan()) {
@@ -136,11 +134,5 @@ class ProductSubscriber implements EventSubscriberInterface
                 'WeloEanDetailData' => $data,
             ]
         );
-    }
-
-    function dumb($data){
-        highlight_string("<?php\n " . var_export($data, true) . "?>");
-        echo '<script>document.getElementsByTagName("code")[0].getElementsByTagName("span")[1].remove() ;document.getElementsByTagName("code")[0].getElementsByTagName("span")[document.getElementsByTagName("code")[0].getElementsByTagName("span").length - 1].remove() ; </script>';
-        die();
     }
 }
