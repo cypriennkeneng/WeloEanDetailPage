@@ -1,0 +1,17 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
+
+{% block buy_widget_ordernumber_container %}
+    {{ parent() }}
+    {% if page.product.WeloEanDetailData %}
+        {% for item in page.product.WeloEanDetailData %}
+            <div class="product-detail-ordernumber-container">
+            <span class="product-detail-ordernumber-label">
+                             {{ item.label }}
+                        </span>
+                <span class="product-detail-ordernumber">
+                             {{ item.content }}
+                        </span>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
